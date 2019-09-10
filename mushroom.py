@@ -62,21 +62,11 @@ from sklearn.tree import DecisionTreeClassifier
 dt = DecisionTreeClassifier()
 dt.fit(train_x,train_y)
 pred_2 = dt.predict(test_x)
-print(accuracy_score(test_y,pred_2)) # 1.0
+print(accuracy_score(test_y,pred_2))
 
 print(confusion_matrix(test_y,pred_2))
-'''
-[[845   0]
- [  0 780]]
-'''
 
 print(classification_report(test_y,pred_2))
-'''
-             precision    recall  f1-score   support
-          0       1.00      1.00      1.00       845
-          1       1.00      1.00      1.00       780
-avg / total       1.00      1.00      1.00      1625
-'''
 
 from sklearn.metrics import roc_auc_score,roc_curve
 print(roc_auc_score(test_y,dt.predict(test_x))) #1.0
@@ -101,6 +91,6 @@ fo = open('mush.obj','rb')
 res = pc.load(fo)
 fo.close()
 
-print(res.score(train_x,train_y)) # 1.0
+print(res.score(train_x,train_y))
 
-print(res.score(test_x,test_y)) # 1.0
+print(res.score(test_x,test_y))
